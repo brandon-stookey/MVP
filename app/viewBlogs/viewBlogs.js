@@ -14,6 +14,6 @@ angular.module('myApp.viewBlogs', ['ngRoute']) //when creating this module, migh
   });
 }])
 
-.controller('viewBlogsCtrl', [function() {
-
+.controller('viewBlogsCtrl',['$scope','createBlogFactory',function($scope, createBlogFactory) {
+	$scope.blogs = createBlogFactory.blogs;
 }]);
