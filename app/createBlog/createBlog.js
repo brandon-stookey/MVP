@@ -9,31 +9,24 @@ angular.module('myApp.createBlog', ['ngRoute'])
   });
 }])
 
-.controller('createBlogCtrl', ['$scope', function($scope) {
-	$scope.blogs = [];
+.controller('createBlogCtrl', ['$scope', 'createBlogFactory', function($scope, createBlogFactory) {
+	angular.extend($scope, createBlogFactory);
+		
+}])
+.factory('createBlogFactory', function() {
+	var blogs = [];
 
-	$scope.addBlog = function(newBlog){
-		$scope.blogs.push({title: newBlog});
-		$scope.textareaValue = '';
+	var addBlog = function(newBlog){
+		blogs.push({title: newBlog}); 
 	};
 
-	$scope.done = function(index){
-		$scope.todos.splice(index,1);
+	var done = function(index){
+		 todos.splice(index,1);
 	}
-		
-}]);
-// .factory('myService', function() {
-//  var savedData = {}
-//  function set(data) {
-//    savedData = data;
-//  }
-//  function get() {
-//   return savedData;
-//  }
 
-//  return {
-//   set: set,
-//   get: get
-//  }
+ return {
+	blogs: blogs,
+	addBlog: addBlog
+ }
 
-// });
+});
