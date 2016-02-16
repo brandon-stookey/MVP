@@ -1,0 +1,15 @@
+
+<div id='signup'>
+  <h1>signup</h1>
+  <form name="signupForm" ng-submit='signup()'>
+  
+    <input type='text' name = "username" ng-model='user.username' ng-required = "true" ng-minlength = "3" ng-maxlength="8">
+    <p ng-show="signupForm.username.$invalid">Your Username is Required</p>
+
+    <input type="password" name ='password' ng-model='user.password' ng-required = "true">
+    <p ng-show="signupForm.password.$invalid">A Password is Required</p>
+
+    <a href ="#/viewBlogs"><button ng-disabled="signupForm.$invalid">signup</button></a>
+  </form>
+  <a href="#/login">Already have an account? <strong>Log In</strong> ...</a>
+</div>

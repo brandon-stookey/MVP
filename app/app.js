@@ -5,6 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.createBlog',
   'myApp.viewBlogs',
+  'myApp.signup',
+  'myApp.login',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {

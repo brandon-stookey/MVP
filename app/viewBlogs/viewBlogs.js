@@ -14,6 +14,9 @@ angular.module('myApp.viewBlogs', ['ngRoute']) //when creating this module, migh
   });
 }])
 
-.controller('viewBlogsCtrl',['$scope','createBlogFactory',function($scope, createBlogFactory) {
+.controller('viewBlogsCtrl',['$scope','createBlogFactory','UserName', function($scope, createBlogFactory, UserName) {
+	$scope.userNames = UserName.userName;
 	$scope.blogs = createBlogFactory.blogs;
+	$scope.titles = createBlogFactory.titles;
+	
 }]);

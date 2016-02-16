@@ -15,9 +15,16 @@ angular.module('myApp.createBlog', ['ngRoute'])
 }])
 .factory('createBlogFactory', function() {
 	var blogs = [];
+	var titles =[];
 
-	var addBlog = function(newBlog){
-		blogs.push({title: newBlog}); 
+	var addTitle = function(title){
+		titles.push({title: title}); 
+		console.log('titles', titles);
+	};
+
+	var addBlog = function(newTitle, newBlog){
+		blogs.unshift({title: newTitle, text: newBlog }); 
+		console.log('blogs', blogs);
 	};
 
 	var done = function(index){
@@ -26,7 +33,9 @@ angular.module('myApp.createBlog', ['ngRoute'])
 
  return {
 	blogs: blogs,
-	addBlog: addBlog
+	addBlog: addBlog,
+	addTitle:addTitle,
+	titles: titles
  }
 
 });
