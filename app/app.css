@@ -68,6 +68,17 @@
   border-color: black;
   overflow-x: scroll;
 }
-
+.cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:500px;
+    height:350px;
+}
+form .progress {
+    line-height: 15px;
+}
+.progress {
+    display: inline-block;
+    width: 100px;
 
 

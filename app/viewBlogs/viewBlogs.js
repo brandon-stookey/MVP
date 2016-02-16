@@ -14,9 +14,11 @@ angular.module('myApp.viewBlogs', ['ngRoute']) //when creating this module, migh
   });
 }])
 
-.controller('viewBlogsCtrl',['$scope','createBlogFactory','UserName', function($scope, createBlogFactory, UserName) {
+.controller('viewBlogsCtrl',['$scope','createBlogFactory','UserName', 'upLoadFactory', function($scope, createBlogFactory, UserName, upLoadFactory) {
+	$scope.image = upLoadFactory.imageUrl;
 	$scope.userNames = UserName.userName;
 	$scope.blogs = createBlogFactory.blogs;
 	$scope.titles = createBlogFactory.titles;
+	console.log('view html ' ,$scope.image);
 	
 }]);
