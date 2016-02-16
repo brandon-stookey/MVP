@@ -1,5 +1,6 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+	<h3>Post Blogs Here</h3>
+		<ul>
+		<li ng-repeat="newBlog in blogs">
+			<h3> {{ newBlog.title }} </h3>
+		</li>
+		</ul>
